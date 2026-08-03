@@ -1,2 +1,4 @@
 # WEB-II
-Repositorio referente a Máteria de WEB II da FURB
+Repositorio referente a máteria de WEB II da FURB
+
+Trabalho escolhido: A Diagrmas UML
