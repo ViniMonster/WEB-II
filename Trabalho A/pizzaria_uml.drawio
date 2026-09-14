@@ -1,0 +1,169 @@
+<mxfile host="app.diagrams.net" pages="2">
+  <diagram name="Diagrama de Componentes" id="componentes">
+    <mxGraphModel dx="1414" dy="777" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1050" pageHeight="750" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="cliente" parent="1" style="shape=component;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" value="Cliente Web" vertex="1">
+          <mxGeometry height="50" width="180" x="400" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="apiPedido" parent="1" style="shape=component;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="API REST - Pedido&#xa;(fornece endpoints de pedido)" vertex="1">
+          <mxGeometry height="60" width="200" x="100" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="apiProduto" parent="1" style="shape=component;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="API REST - Produto&#xa;(fornece cardápio)" vertex="1">
+          <mxGeometry height="60" width="200" x="390" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="apiAtend" parent="1" style="shape=component;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="API REST - Atendimento&#xa;(cancelamento/reclamação)" vertex="1">
+          <mxGeometry height="60" width="220" x="680" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="servPedido" parent="1" style="shape=component;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Serviço de Pedido&#xa;(regras de negócio)" vertex="1">
+          <mxGeometry height="60" width="200" x="100" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="servCardapio" parent="1" style="shape=component;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Serviço de Cardápio&#xa;(consulta produtos)" vertex="1">
+          <mxGeometry height="60" width="200" x="390" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="servCancel" parent="1" style="shape=component;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Serviço de Cancelamento&#xa;e Reembolso" vertex="1">
+          <mxGeometry height="60" width="220" x="680" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="servPagamento" parent="1" style="shape=component;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Serviço de Pagamento&#xa;(cobrança/estorno)" vertex="1">
+          <mxGeometry height="60" width="200" x="300" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="servNotif" parent="1" style="shape=component;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Serviço de Notificação&#xa;(status ao cliente)" vertex="1">
+          <mxGeometry height="60" width="220" x="680" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="repositorio" parent="1" style="shape=component;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="Repositório de Dados&#xa;(persistência - DAO/JPA)" vertex="1">
+          <mxGeometry height="60" width="880" x="60" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="cliente" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=open;" target="apiPedido">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="cliente" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=open;" target="apiProduto">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="cliente" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=open;" target="apiAtend">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="apiPedido" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=open;" target="servPedido">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="apiProduto" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=open;" target="servCardapio">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="apiAtend" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=open;" target="servCancel">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="servCardapio" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=open;exitX=0.2;exitY=1;entryX=0.8;entryY=1;labelBackgroundColor=#ffffff;fontSize=11;" target="servPedido" value="seleciona produto">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="430" y="390" />
+              <mxPoint x="260" y="390" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="servCancel" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=open;exitX=0.2;exitY=1;entryX=0.6;entryY=1;labelBackgroundColor=#ffffff;fontSize=11;" target="servPedido" value="consulta status">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="724" y="420" />
+              <mxPoint x="220" y="420" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="servPedido" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=open;exitX=0.4;exitY=1;entryX=0.2;entryY=0;labelBackgroundColor=#ffffff;fontSize=11;" target="servPagamento" value="cobra pagamento">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="180" y="480" />
+              <mxPoint x="340" y="480" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="servPedido" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=open;exitX=0.8;exitY=1;entryX=0.2;entryY=0;labelBackgroundColor=#ffffff;fontSize=11;" target="servNotif" value="confirma pedido">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="260" y="460" />
+              <mxPoint x="724" y="460" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="servCancel" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=open;exitX=0.5;exitY=1;entryX=0.8;entryY=0;labelBackgroundColor=#ffffff;fontSize=11;" target="servPagamento" value="estorna valor">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="790" y="440" />
+              <mxPoint x="460" y="440" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e12" edge="1" parent="1" source="servCancel" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=open;exitX=1;exitY=0.5;entryX=1;entryY=0.5;labelBackgroundColor=#ffffff;fontSize=11;" target="servNotif" value="avisa cancelamento">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="930" y="310" />
+              <mxPoint x="930" y="530" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e13" edge="1" parent="1" source="servPagamento" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=open;exitX=0.5;exitY=1;entryX=0.3;entryY=0;" target="repositorio">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e14" edge="1" parent="1" source="servPedido" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=open;exitX=0;exitY=0.5;entryX=0.1;entryY=0;" target="repositorio">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="20" y="310" />
+              <mxPoint x="20" y="600" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e15" edge="1" parent="1" source="servCancel" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=open;exitX=1;exitY=0.8;entryX=0.9;entryY=0;" target="repositorio">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="990" y="332" />
+              <mxPoint x="990" y="600" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Diagrama de Implantacao" id="implantacao">
+    <mxGraphModel dx="1414" dy="777" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="750" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="cliente" parent="1" style="shape=cube;size=15;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" value="Dispositivo Cliente&#xa;(Navegador)" vertex="1">
+          <mxGeometry height="90" width="160" x="40" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="servApp" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=top;fontStyle=1;" value="" vertex="1">
+          <mxGeometry height="450" width="480" x="340" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="servAppLabel" parent="1" style="text;html=1;align=center;fontStyle=1;" value="Servidor de Aplicação&#xa;(Tomcat / Spring Boot)" vertex="1">
+          <mxGeometry height="40" width="480" x="340" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="gateway" parent="1" style="shape=note;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;size=16;" value="API Gateway REST&#xa;(Pedido, Produto, Atendimento)" vertex="1">
+          <mxGeometry height="70" width="400" x="380" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="servicos" parent="1" style="shape=note;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;size=16;" value="Camada de Serviços&#xa;(Pedido, Cardápio, Pagamento, Cancelamento)" vertex="1">
+          <mxGeometry height="70" width="400" x="380" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="notif" parent="1" style="shape=note;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;size=16;" value="Serviço de Notificação" vertex="1">
+          <mxGeometry height="50" width="400" x="380" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="dao" parent="1" style="shape=note;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;size=16;" value="Repositório (DAO / JPA)" vertex="1">
+          <mxGeometry height="60" width="400" x="380" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="bd" parent="1" style="shape=cube;size=15;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="Servidor de Banco de Dados&#xa;(MySQL)" vertex="1">
+          <mxGeometry height="90" width="180" x="940" y="365" as="geometry" />
+        </mxCell>
+        <mxCell id="externo" parent="1" style="shape=cube;size=15;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="Serviço Externo de Notificação&#xa;(Email/SMS - ex. SendGrid/Twilio)" vertex="1">
+          <mxGeometry height="90" width="180" x="940" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="cliente" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;labelBackgroundColor=#ffffff;" target="servApp" value="HTTPS">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="dao" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;labelBackgroundColor=#ffffff;" target="bd" value="JDBC">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="notif" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;labelBackgroundColor=#ffffff;" target="externo" value="HTTPS (API externa)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
