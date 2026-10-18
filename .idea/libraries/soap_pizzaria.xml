@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="soap-pizzaria">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Trabalho C/soap-pizzaria.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
