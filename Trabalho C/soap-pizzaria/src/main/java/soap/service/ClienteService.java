@@ -6,10 +6,7 @@ import javax.jws.WebService;
 import soap.controle.ClienteControle;
 import soap.model.Cliente;
 
-/**
- * Web Service SOAP para o CRUD de Cliente.
- * Cada método público vira uma operação SOAP (visível no WSDL).
- */
+
 @WebService(serviceName = "ClienteService")
 public class ClienteService {
 

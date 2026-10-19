@@ -1,10 +1,6 @@
 package soap.model;
 
-/**
- * Classe modelo Pedido.
- * Um Pedido pertence a um Cliente (relação N:1 com Cliente,
- * guardada aqui pelo clienteId).
- */
+
 public class Pedido {
 
     private int id;

@@ -4,10 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import soap.model.Cliente;
 
-/**
- * Classe de controle do Cliente.
- * Usa uma List para simular a persistência em banco de dados.
- */
+
 public class ClienteControle {
 
     private static final List<Cliente> clientes = new ArrayList<>();

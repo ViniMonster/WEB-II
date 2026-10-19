@@ -8,10 +8,7 @@ import javax.xml.ws.soap.SOAPFaultException;
 import soap.model.Cliente;
 import soap.model.Pedido;
 
-/**
- * Aplicação cliente que testa os Web Services SOAP.
- * Rode o Publicador antes (os serviços precisam estar no ar).
- */
+
 public class ClienteTeste {
 
     private static final String NS = "http://service.soap/";

@@ -6,10 +6,7 @@ import javax.jws.WebService;
 import soap.controle.PedidoControle;
 import soap.model.Pedido;
 
-/**
- * Web Service SOAP para o CRUD de Pedido.
- * Também expõe uma operação que demonstra a relação com Cliente.
- */
+
 @WebService(serviceName = "PedidoService")
 public class PedidoService {
 

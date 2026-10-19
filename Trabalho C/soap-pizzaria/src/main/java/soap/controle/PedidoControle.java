@@ -4,10 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import soap.model.Pedido;
 
-/**
- * Classe de controle do Pedido.
- * Usa uma List para simular a persistência em banco de dados.
- */
+
 public class PedidoControle {
 
     private static final List<Pedido> pedidos = new ArrayList<>();

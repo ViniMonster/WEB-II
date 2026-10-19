@@ -1,9 +1,6 @@
 package soap.model;
 
-/**
- * Classe modelo Cliente.
- * Um Cliente pode ter vários Pedidos (relação 1:N com Pedido).
- */
+
 public class Cliente {
 
     private int id;

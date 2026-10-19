@@ -5,9 +5,7 @@ import javax.jws.WebMethod;
 import javax.jws.WebService;
 import soap.model.Pedido;
 
-/**
- * Interface do lado cliente que espelha as operações do PedidoService (WSDL).
- */
+
 @WebService(name = "PedidoService", targetNamespace = "http://service.soap/")
 public interface PedidoWS {
 
